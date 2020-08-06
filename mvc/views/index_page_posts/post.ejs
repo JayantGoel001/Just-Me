@@ -1,7 +1,20 @@
+<%
+    let horizontal = post_meta.includes("hp")?true:false;
+    let horizontalClasses = horizontal? " d-md-flex align-items center":"";
+    let horizontalAClasses = horizontal? " img-2":"";
+    let horizontalDivClasses = horizontal? " text-2":"";
 
-<div class="blog-entry ftco-animate">
-    <a href="single.html" class="img" style="background-image: url(images/image_4.jpg);"></a>
-    <div class="text p-4">
+    let flip = post_meta.includes("hpr")?true:false;
+    let flippedAClass = flip? " order-md-last":"";
+    let flippedDivClass = flip? " text-md-right":"";
+
+    let reverseDirection = post_meta.includes("vpr")?" d-flex flex-column-reverse":"";
+%>
+
+
+<div class="blog-entry ftco-animate<%= horizontalClasses %><%= reverseDirection%>">
+    <a href="single.html" class="img<%= horizontalAClasses %> <%= flippedAClass%>" style="background-image: url(images/image_4.jpg);"></a>
+    <div class="text p-4<%= horizontalDivClasses %><%= flippedDivClass%>">
         <h3 class="mb-2"><a href="single.html">A Loving Heart is the Truest Wisdom</a></h3>
         <div class="meta-wrap">
             <p class="meta">
