@@ -1,0 +1,38 @@
+<%# Standard posts
+    <div class="col-md-4 d-flex">
+        POST
+    </div>
+%>
+
+<%# Horizontal posts
+    <div class="col-md-8 d-flex">
+        <div class="row">
+            <div class="col-md-12">
+                POST
+            </div>
+            <div class="col-md-12">
+                POST
+            </div>
+        </div>
+    </div>
+%>
+
+<% for (let i = 0; i < posts.length; i++) { %>
+
+    <% if (posts_meta[i].include("hp")) {%>
+        <div class="col-md-8 d-flex">
+            <div class="row">
+                <div class="col-md-12">
+                    <%- include("post.ejs",{post:posts[i],post_meta:posts_meta[i]})%>
+                </div>
+                <div class="col-md-12">
+                    <%- include("post.ejs",{post:posts[++i],post_meta:posts_meta[i]})%>
+                </div>
+            </div>
+        </div>
+    <%}else {%>
+        <div class="col-md-4 d-flex">
+            <%- include("post.ejs",{post:posts[i],post_meta:posts_meta[i]})%>
+        </div>
+    <%}%>
+<% } %>
