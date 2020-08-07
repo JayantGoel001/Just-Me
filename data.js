@@ -72,7 +72,8 @@ let postData = [
             date: "Sept 14, 2019",
             body: "Easy independant modification luxurious emphasis modern shape. Imagination allure cut.",
             comments: []
-        },{
+        },
+        {
             user: person1.name,
             userImg: person1.img,
             date: "Sept 13, 2019",
@@ -96,7 +97,8 @@ let postData = [
                 body: "Thanks :-)",
                 comments: []
             }]
-        }, {
+        },
+        {
             user: person6.name,
             userImg: person6.img,
             date: "Sept 14, 2019",
