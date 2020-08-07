@@ -19,9 +19,21 @@
         <h3 class="mb-2"><a href="/posts/<%= post.id %>"><%= post.title %></a></h3>
         <div class="meta-wrap">
             <p class="meta">
-                <span><i class="icon-calendar mr-2"></i><%= post.data %></span>
+                <span><i class="icon-calendar mr-2"></i><%= post.date %></span>
                 <span><a href="/posts/<%= post.id %>"><i class="icon-folder-o mr-2"></i><%= post.category%></a></span>
-                <span><i class="icon-comment2 mr-2"></i><%= post.comments.length%> Comments</span>
+                <%
+                    var totalComments=0;
+                    function countComments(arr){
+                        var num=0;
+                        num += arr.length;
+                        for (var i = 0; i < arr.length; i++) {
+                            num += countComments(arr[i].comments);
+                        }
+                        return num;
+                    }
+                    totalComments = countComments(post.comments);
+                %>
+                <span><i class="icon-comment2 mr-2"></i><%= totalComments %> Comments</span>
             </p>
         </div>
         <p class="mb-4"><%= post.preview %></p>
