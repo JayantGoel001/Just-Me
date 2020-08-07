@@ -11,7 +11,7 @@
         <h3 class="sidebar-heading">Categories</h3>
         <ul class="categories">
             <% for (var i = 0; i < categoryData.length; i++) {%>
-                <li><a href="#" class='text-capitalize'><%= categoryData[i].category%> <span><%= (categoryData[i].amount)%> </span></a></li>
+                <li><a href="/filter?category=<%= categoryData[i].category %>" class='text-capitalize'><%= categoryData[i].category%> <span><%= (categoryData[i].amount)%> </span></a></li>
             <%}%>
         </ul>
     </div>
