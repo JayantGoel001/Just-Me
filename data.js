@@ -40,7 +40,8 @@ let person10 = {
     img: "/images/person_10.jpg"
 }
 let author = {
-
+    name: "Carol Pane",
+    img: "/images/author.jpg"
 }
 
 
