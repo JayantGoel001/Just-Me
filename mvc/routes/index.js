@@ -11,6 +11,8 @@ router.get('/posts/:postid',indexCtrl.getBlogPost);
 
 router.get('/contact',indexCtrl.getContact);
 router.get('/about',indexCtrl.getAbout);
+
+router.get('/filter',indexCtrl.getFilterList);
 router.get('/404',indexCtrl.get404);
 router.get('*',indexCtrl.redirect404);
 

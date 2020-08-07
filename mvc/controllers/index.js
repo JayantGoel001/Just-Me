@@ -6,7 +6,7 @@ const categoryData = data.categoryData;
 
 const recentPostsAmount = 5;
 const getHomePage = function(req,res) {
-    res.render("index",{title : "Just Me",posts:postData,active:"index"});
+    res.render("index",{title : "Just Me",posts:postData,active:"index",categoryData:categoryData});
 }
 
 const getBlogPost = function({params},res) {
@@ -24,10 +24,16 @@ const redirect404 = function(req,res) {
 }
 
 const getAbout = function(req,res) {
-    res.render('About',{title : "About Me",active:"about"});
+    res.render('About',{title : "About Me",active:"about",categoryData:categoryData});
 }
 const getContact = function(req,res) {
-    res.render('Contact',{title : "Contact Me",active:"contact"});
+    res.render('Contact',{title : "Contact Me",active:"contact",categoryData:categoryData});
+}
+const getFilterList = function({query},res) {
+    let filterPosts = postData.filter((val) => val.category=== query.category);
+
+    res.render('Filter',{title : "Just Me",
+    active:query.category,posts:filterPosts,categoryData:categoryData});
 }
 module.exports = {
     getHomePage,
@@ -35,5 +41,6 @@ module.exports = {
     get404,
     redirect404,
     getAbout,
-    getContact
+    getContact,
+    getFilterList
 };
