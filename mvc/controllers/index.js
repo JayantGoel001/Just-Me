@@ -30,7 +30,9 @@ const getContact = function(req,res) {
     res.render('Contact',{title : "Contact Me",active:"contact",categoryData:categoryData});
 }
 const getFilterList = function({query},res) {
-    let filterPosts = postData.filter((val) => val.category=== query.category);
+    let filterPosts = postData.filter((val) =>
+      val.category=== query.category || val.tags.includes(query.tag);
+    );
 
     res.render('Filter',{title : "Just Me",
     active:query.category,posts:filterPosts,categoryData:categoryData});

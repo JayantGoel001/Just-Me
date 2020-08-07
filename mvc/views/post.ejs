@@ -15,7 +15,7 @@
                             <div class="tag-widget post-tag-container mb-5 mt-5">
                                 <div class="tagcloud">
                                     <% for (var i = 0; i < post.tags.length; i++) { %>
-                                        <a href="#" class="tag-cloud-link"><%- post.tags[i]%></a>
+                                        <a href="/filter?tag=<%= post.tags[i]%>" class="tag-cloud-link"><%- post.tags[i]%></a>
                                         <%}%>
                                 </div>
 
