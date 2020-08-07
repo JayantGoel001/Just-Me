@@ -599,11 +599,21 @@ let postData = [
         date: "Nov, 16, 2019"
     }
 ];
-
+function countComments(arr){
+    var num=0;
+    num += arr.length;
+    for (var i = 0; i < arr.length; i++) {
+        num += countComments(arr[i].comments);
+    }
+    return num;
+}
 
 for (var i = 0; i < postData.length; i++) {
     let startingID = 842;
     postData[i].id = startingID + i;
+    var totalComments=0;
+    totalComments = countComments(postData[i].comments);
+    postData[i].numberOfComments = totalComments;
 }
 module.exports = {
     postData,
