@@ -4,11 +4,14 @@
     <h1 id="colorlib-logo" class="mb-4"><a href="index.html">ionize</a></h1>
     <nav id="colorlib-main-menu" role="navigation">
         <ul>
-            <li class="colorlib-active"><a href="/">Home</a></li>
+            <li <% if(locals.active && active == "index") { %>class="colorlib-active"<% } %> >
+                <a href="/">Home</a></li>
             <li><a href="/">Travel</a></li>
             <li><a href="/">Lifestyle</a></li>
-            <li><a href="/">About</a></li>
-            <li><a href="/">Contact</a></li>
+            <li <% if(locals.active && active == "about") { %>class="colorlib-active"<% } %>>
+                <a href="/about">About</a></li>
+            <li <% if(locals.active && active == "contact") { %>class="colorlib-active"<% } %>>
+                <a href="/contact">Contact</a></li>
         </ul>
     </nav>
 
