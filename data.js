@@ -40,8 +40,7 @@ let person10 = {
     img: "/images/person_10.jpg"
 }
 let author = {
-    name: "Abigail Edwards",
-    img: "/images/author.jpg"
+
 }
 
 
@@ -65,6 +64,8 @@ let postData = [
         category: "fashion",
         tags: ["love", "trends", "pop culture"],
         image: "image_1.jpg",
+        name: "Cristine Edwards",
+        img: "/images/author.jpg",
         comments: [
         {
             user: person7.name,
@@ -134,6 +135,8 @@ let postData = [
         category: "life",
         tags: ["money", "happiness", "true stories", "relationships"],
         image: "image_2.jpg",
+        name: "Cristine Edwards",
+        img: "/images/author.jpg",
         comments: [
         {
             user: "Brandine Burns",
@@ -167,6 +170,8 @@ let postData = [
         category: "fun",
         tags: ["relationships", "happiness"],
         image: "image_3.jpg",
+        name: "Cristine Edwards",
+        img: "/images/author.jpg",
         comments: [
         {
             user: person9.name,
@@ -219,6 +224,8 @@ let postData = [
         category: "fun",
         tags: ["knowledge", "science", "self learning"],
         image: "image_4.jpg",
+        name: "Cristine Edwards",
+        img: "/images/author.jpg",
         comments: [
         {
             user: person4.name,
@@ -260,6 +267,8 @@ let postData = [
         category: "fashion",
         tags: ["money", "pop culture"],
         image: "image_5.jpg",
+        name: "Cristine Edwards",
+        img: "/images/author.jpg",
         comments: [
         {
             user: "Jenny Smith",
@@ -297,6 +306,8 @@ let postData = [
         category: "fun",
         tags: ["true stories", "tech", "mindfulness"],
         image: "image_6.jpg",
+        name: "Cristine Edwards",
+        img: "/images/author.jpg",
         comments: [
         {
             user: person3.name,
@@ -329,6 +340,8 @@ let postData = [
         category: "fun",
         tags: ["happiness", "self-help"],
         image: "image_7.jpg",
+        name: "Cristine Edwards",
+        img: "/images/author.jpg",
         comments: [
         {
             user: person5.name,
@@ -372,6 +385,8 @@ let postData = [
         category: "life",
         tags: ["friendships", "relationships"],
         image: "image_8.jpg",
+        name: "Cristine Edwards",
+        img: "/images/author.jpg",
         comments: [
         {
             user: person10.name,
@@ -404,6 +419,8 @@ let postData = [
         category: "life",
         tags: ["happiness", "self-help", "mindfulness"],
         image: "image_9.jpg",
+        name: "Cristine Edwards",
+        img: "/images/author.jpg",
         comments: [
         {
             user: person1.name,
@@ -459,6 +476,8 @@ let postData = [
         category: "travel",
         tags: ["culture", "money"],
         image: "image_10.jpg",
+        name: "Cristine Edwards",
+        img: "/images/author.jpg",
         comments: [
         {
             user: person9.name,
@@ -510,6 +529,8 @@ let postData = [
         category: "love",
         tags: ["romance", "money", "relationships"],
         image: "image_11.jpg",
+        name: "Cristine Edwards",
+        img: "/images/author.jpg",
         comments: [
         {
             user: person7.name,
@@ -558,6 +579,8 @@ let postData = [
         category: "love",
         tags: ["romance", "happiness", "friendships"],
         image: "image_12.jpg",
+        name: "Cristine Edwards",
+        img: "/images/author.jpg",
         comments: [
         {
             user: person5.name,
