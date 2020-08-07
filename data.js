@@ -43,7 +43,8 @@ let author = {
     name: "Carol Pane",
     img: "/images/author.jpg"
 }
-
+let uniqueTags = new Set();
+let categoryData = [];
 
 let postData = [
     {
@@ -638,7 +639,23 @@ for (var i = 0; i < postData.length; i++) {
     var totalComments=0;
     totalComments = countComments(postData[i].comments);
     postData[i].numberOfComments = totalComments;
+    for (var j = 0; j < postData[i].tags.length; j++) {
+        uniqueTags.add(postData[i].tags[j]);
+    }
+    var holder = holder || [];
+    if (holder.includes(postData[i].category)) {
+        categoryData.forEach((val) => {
+            val.category === postData[i].category && val.amount++;
+        });
+    }
+    else {
+        holder.push(postData[i].category);
+        categoryData.push({category : postData[i].category,amount : 1 });
+    }
 }
+uniqueTags = [...uniqueTags];
+
 module.exports = {
     postData,
+    uniqueTags,categoryData
 }
