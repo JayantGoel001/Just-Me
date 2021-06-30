@@ -13,7 +13,7 @@
         <h3 class="sidebar-heading">Categories</h3>
         <ul class="categories text-capitalize">
             <% for (let category in categories) { %>
-                <li><a href="#"><%= category %> <span>( <%= categories[category] %> )</span></a></li>
+                <li><a href="/filter?category=<%= category %>"><%= category %> <span>( <%= categories[category] %> )</span></a></li>
             <% } %>
         </ul>
     </div>

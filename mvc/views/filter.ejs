@@ -19,7 +19,18 @@
                                         </div>
                                         <h2 class="mb-5"><a href="/posts/<%= posts[i].id %>"><%= posts[i].title %></a></h2>
                                     </div>
-                                    <p><%= posts[i].preview %></p>
+                                    <%
+                                        var preview = "";
+                                        var pattern = new RegExp("^<p>[^<]");
+                                        for (let j = 0; j < posts[i].body.length; j++) {
+                                            if (pattern.test(posts[i].body[j])){
+                                                preview = posts[i].body[j].substr(3,250);
+                                                break;
+                                            }
+                                        }
+                                        console.log(preview);
+                                    %>
+                                    <p><%= preview+"..." || posts[i].preview %></p>
                                     <div class="icon d-flex align-items-center my-5">
                                         <div class="img" style="background-image: url('<%= posts[i].img %>');"></div>
                                         <div class="position pl-3">

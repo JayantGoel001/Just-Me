@@ -19,13 +19,9 @@ const getBlogPost = (req,res)=>{
 }
 
 const getFilteredPost = (req,res) =>{
-    let posts = [];
-    for (let i = 0; i < postData.length; i++) {
-        if (postData[i].category === req.query.category){
-            posts.push(postData[i]);
-        }
-    }
-    res.render('filter',{ title:"Just Me", posts: posts, categories : uniqueCategories,active : req.query.category });
+    let posts = postData.filter( val=> val.category === req.query.category);
+
+    res.render('filter',{ title:"Just Me - "+req.query.category, posts: posts, categories : uniqueCategories,active : req.query.category });
 }
 
 const get404 = (req,res)=>{
