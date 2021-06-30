@@ -45,6 +45,7 @@ let author = {
 }
 let uniqueTag = new Set();
 let uniqueCategory = {};
+let uniqueDate = {};
 
 let postData = [
     {
@@ -646,11 +647,18 @@ for (let i = 0; i < postData.length; i++) {
         uniqueCategory[postData[i].category]  = 0;
     }
     uniqueCategory[postData[i].category] +=1;
+    let date = postData[i].date.split(',');
+    let formattedDate = date[0] + date[2];
+    if (!(formattedDate in uniqueDate)){
+        uniqueDate[formattedDate] = 0;
+    }
+    uniqueDate[formattedDate] += 1;
 }
 uniqueTag = [...uniqueTag];
 
 module.exports = {
     postData,
     uniqueTag,
-    uniqueCategory
+    uniqueCategory,
+    uniqueDate
 }
