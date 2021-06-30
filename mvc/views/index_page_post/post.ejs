@@ -7,13 +7,12 @@
     let flip = !!post_meta.includes("hpr");
     let flippedAClass = flip? " order-md-last" : "";
     let flippedDivClass = flip? " text-md-right" : "";
-
     let reversedDirection = post_meta.includes("vpr")? " d-flex flex-column-reverse": "";
 %>
 <div class="blog-entry ftco-animate<%= horizontalClasses %> <%= reversedDirection %>">
-    <a href="single.html" class="img <%= horizontalAClasses %> <%= flippedAClass %>" style="background-image: url(images/<%= post.image %>);"></a>
+    <a href="posts/<%= post.id %>" class="img <%= horizontalAClasses %> <%= flippedAClass %>" style="background-image: url(images/<%= post.image %>);"></a>
     <div class="text p-4 <%= horizontalDivClasses %> <%= flippedDivClass %>">
-        <h3 class="mb-2"><a href="single.html"><%= post.title %></a></h3>
+        <h3 class="mb-2"><a href="posts/<%= post.id %>"><%= post.title %></a></h3>
         <div class="meta-wrap">
             <p class="meta">
                 <span><i class="icon-calendar mr-2"></i><%= post.date %></span>
@@ -22,6 +21,6 @@
             </p>
         </div>
         <p class="mb-4"><%= post.body.substr(0,60)+"..." %></p>
-        <p><a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+        <p><a href="posts/<%= post.id %>" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
     </div>
 </div>
