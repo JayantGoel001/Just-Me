@@ -623,9 +623,12 @@ let postData = [
     }
 ];
 function countComments(arr) {
+    if (arr.length==0){
+        return 0;
+    }
     let comments = arr.length;
     for (let i = 0; i < arr.length; i++) {
-        comments+=arr[i].comments.length;
+        comments += countComments(arr[i].comments);
     }
     return comments;
 }
