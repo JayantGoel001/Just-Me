@@ -43,6 +43,8 @@ let author = {
     name: "Carol Pane",
     img: "/images/author.jpg"
 }
+let uniqueTag = new Set();
+let uniqueCategory = {};
 
 let postData = [
     {
@@ -622,6 +624,7 @@ let postData = [
         date: "Nov, 16, 2019"
     }
 ];
+
 function countComments(arr) {
     if (arr.length==0){
         return 0;
@@ -636,7 +639,18 @@ for (let i = 0; i < postData.length; i++) {
     let startingID = 842;
     postData[i].id = startingID + i;
     postData[i].numberOfComments = countComments(postData[i].comments);
+    for (let j = 0; j < postData[i].tags.length; j++) {
+        uniqueTag.add(postData[i].tags[j]);
+    }
+    if (!(postData[i].category in uniqueCategory)){
+        uniqueCategory[postData[i].category]  = 0;
+    }
+    uniqueCategory[postData[i].category] +=1;
 }
+uniqueTag = [...uniqueTag];
+
 module.exports = {
-    postData
+    postData,
+    uniqueTag,
+    uniqueCategory
 }
