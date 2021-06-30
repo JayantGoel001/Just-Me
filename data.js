@@ -86,10 +86,10 @@ let postData = [
     }
 ];
 
+let startingID = 842;
 for (let i = 0; i < postData.length; i++) {
-    let startingID = 842;
     postData[i].id = startingID + i;
 }
 module.exports = {
-    postData,
+    postData
 }
