@@ -19,9 +19,10 @@ const getBlogPost = (req,res)=>{
 }
 
 const getFilteredPost = (req,res) =>{
-    let posts = postData.filter( val=> val.category === req.query.category);
-
-    res.render('filter',{ title:"Just Me - "+req.query.category, posts: posts, categories : uniqueCategories,active : req.query.category });
+    let posts = postData.filter( val=> {
+        return val.category === req.query.category || val.tags.includes(req.query.tag);
+    });
+    res.render('filter',{ title:"Just Me - "+req.query.category || req.query.tag, posts: posts, categories : uniqueCategories,active : req.query.category });
 }
 
 const get404 = (req,res)=>{
