@@ -5,6 +5,6 @@ const indexCtrl = require('../controllers/index');
 
 router.get('/', indexCtrl.getHomePage);
 
-router.get('/posts/:id', indexCtrl.getBlogPost);
+router.get('/posts/:postID', indexCtrl.getBlogPost);
 
 module.exports = router;

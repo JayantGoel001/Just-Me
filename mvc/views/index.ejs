@@ -5,7 +5,7 @@
         <div class="container px-0">
             <div class="row no-gutters">
                 <%
-                    posts = posts.splice(0,posts.length-posts.length%3);
+                    posts = posts.slice(0,posts.length-posts.length%3);
                     const rowPattern = [
                         ["vp","hp","hpr"],
                         ["vp","vp","vp"],
@@ -15,10 +15,8 @@
 
                     let amountOfRows = posts.length/3;
                     for (var i = 0; i < amountOfRows; i++) {
-                        let pattern = rowPattern[i%rowPattern.length];
-                        let row = posts.splice(0,3);
                     %>
-                        <%- include("index_page_post/row.ejs",{ posts : row, post_meta : pattern }); %>
+                        <%- include("index_page_post/row.ejs",{ posts : posts.splice(0,3), post_meta : rowPattern[i % rowPattern.length] }); %>
                     <%
                     }
                 %>
