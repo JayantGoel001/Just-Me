@@ -11,12 +11,11 @@
     </div>
     <div class="sidebar-box ftco-animate">
         <h3 class="sidebar-heading">Categories</h3>
-        <ul class="categories">
+        <ul class="categories text-capitalize">
             <% for (let category in categories) { %>
                 <li><a href="#"><%= category %> <span>( <%= categories[category] %> )</span></a></li>
             <% } %>
         </ul>
-
     </div>
 
     <div class="sidebar-box ftco-animate">
@@ -30,7 +29,7 @@
                     </h3>
                     <div class="meta">
                         <div><a href="/posts/<%= recentPost[i].id %>"><span class="icon-calendar"></span><%= recentPost[i].date %></a></div>
-                        <div><a href="/posts/<%= recentPost[i].id %>"><span class="icon-person"></span><%= recentPost[i].name %></a></div>
+                        <div><a href="/about/"><span class="icon-person"></span><%= recentPost[i].name %></a></div>
                         <div><a href="/posts/<%= recentPost[i].id %>"><span class="icon-chat"></span> <%= recentPost[i].numberOfComments %></a></div>
                     </div>
                 </div>

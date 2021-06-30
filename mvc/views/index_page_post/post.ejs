@@ -16,7 +16,7 @@
         <div class="meta-wrap">
             <p class="meta">
                 <span><i class="icon-calendar mr-2"></i><%= post.date %></span>
-                <span><a href="single.html"><i class="icon-folder-o mr-2"></i><%= post.category %></a></span>
+                <span><a href="/filter?category=<%= post.category %>"><i class="icon-folder-o mr-2"></i><%= post.category %></a></span>
                 <span><i class="icon-comment2 mr-2"></i><%= post.numberOfComments %> Comment</span>
             </p>
         </div>
