@@ -3,6 +3,12 @@
     <section class="ftco-section ftco-no-pt ftco-no-pb">
         <div class="container px-0">
             <div class="row no-gutters">
+                <% if (posts.length==0) { %>
+                    <div class="mt-5 pt-5">
+                        <h1 class="font-weight-bold display-4">No Articles Found.</h1>
+                        <h4 class="font-weight-light">Go Back to the <a href="/">Home Page</a> </h4>
+                    </div>
+                <% } %>
                 <% for (var i = 0; i < posts.length; i++) { %>
                     <div class="col-md-12 blog-wrap">
                         <div class="row no-gutters align-items-center">
@@ -13,7 +19,7 @@
                                         <div class="meta-wrap">
                                             <p class="meta">
                                                 <span><i class="icon-calendar mr-2"></i><%= posts[i].date %></span>
-                                                <span><a href="/filter?category=<%= posts[i].category %>"><i class="icon-folder-o mr-2"></i><%= posts[i].category %></a></span>
+                                                <span><a href="/filter?category=<%= posts[i].category %>" class="text-capitalize"><i class="icon-folder-o mr-2"></i><%= posts[i].category %></a></span>
                                                 <span><i class="icon-comment2 mr-2"></i><%= posts[i].numberOfComments %> Comment</span>
                                             </p>
                                         </div>
