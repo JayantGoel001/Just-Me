@@ -1,6 +1,9 @@
 let data = require("../../data");
 
 const postData = data.postData;
+const uniqueTags = data.uniqueTag;
+const uniqueCategories = data.uniqueCategory;
+const numberOfRecentPost = 3;
 
 const getHomePage = (req,res)=>{
     res.render('index',{ title : "Just Me", posts : postData ,active : "index"});
@@ -10,10 +13,12 @@ const getBlogPost = (req,res)=>{
     if (post==null){
         res.redirect('/404');
     }
-    res.render('post', { title : post.title , post : post });
+    let randomNumber = Math.floor(Math.random() * (postData.length - numberOfRecentPost));
+    res.render('post', { title : post.title , post : post, tags:uniqueTags, categories : uniqueCategories, recentPost : postData.slice(randomNumber,randomNumber+numberOfRecentPost) });
 }
 const get404 = (req,res)=>{
-    res.render('404', { title : "4O4 - I couldn't find that page..." });
+    let randomNumber = Math.floor(Math.random() * (postData.length - numberOfRecentPost));
+    res.render('404', { title : "4O4 - I couldn't find that page...", tags:uniqueTags,categories : uniqueCategories, recentPost : postData.slice(randomNumber,randomNumber+numberOfRecentPost) });
 }
 const redirect404 = (req,res)=>{
     res.redirect('/404');
