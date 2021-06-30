@@ -6,7 +6,6 @@ const getHomePage = (req,res)=>{
     res.render('index',{ title : "Just Me", posts : postData });
 }
 const getBlogPost = (req,res)=>{
-    console.log(postData);
     let post = postData.find( val => val.id.toString() === req.params.postID);
     res.render('post', { title : "Just Me", post : post });
 }
