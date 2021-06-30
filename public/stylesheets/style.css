@@ -6425,6 +6425,11 @@ button.bg-dark:focus {
 .position-fixed {
   position: fixed !important; }
 
+@media (min-width: 576px) {  .position-sm-fixed{ position: fixed!important; }  }
+@media (min-width: 768px) {  .position-md-fixed{ position: fixed!important; }  }
+@media (min-width: 992px) {  .position-lg-fixed{ position: fixed!important; }  }
+@media (min-width: 1200px) {  .position-xl-fixed{ position: fixed!important; }  }
+
 .position-sticky {
   position: -webkit-sticky !important;
   position: sticky !important; }
