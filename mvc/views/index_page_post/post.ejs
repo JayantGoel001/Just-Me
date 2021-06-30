@@ -1,0 +1,28 @@
+<%
+    let horizontal = !!post_meta.includes("hp");
+    let horizontalClasses = horizontal ? " d-md-flex align-items-center" : "";
+    let horizontalAClasses = horizontal? " img-2" : "";
+    let horizontalDivClasses = horizontal? " text-2" : "";
+
+    let flip = !!post_meta.includes("hpr");
+    let flippedAClass = flip? " order-md-last" : "";
+    let flippedDivClass = flip? " text-md-right" : "";
+
+    let reversedDirection = post_meta.includes("vpr")? " d-flex flex-column-reverse": "";
+
+%>
+<div class="blog-entry ftco-animate<%= horizontalClasses %> <%= reversedDirection %>">
+    <a href="single.html" class="img <%= horizontalAClasses %> <%= flippedAClass %>" style="background-image: url(images/image_4.jpg);"></a>
+    <div class="text p-4 <%= horizontalDivClasses %> <%= flippedDivClass %>">
+        <h3 class="mb-2"><a href="single.html">A Loving Heart is the Truest Wisdom</a></h3>
+        <div class="meta-wrap">
+            <p class="meta">
+                <span><i class="icon-calendar mr-2"></i>Sept. 10, 2019</span>
+                <span><a href="single.html"><i class="icon-folder-o mr-2"></i>Travel</a></span>
+                <span><i class="icon-comment2 mr-2"></i>5 Comment</span>
+            </p>
+        </div>
+        <p class="mb-4">A small river named Duden flows by their place and supplies</p>
+        <p><a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+    </div>
+</div>
