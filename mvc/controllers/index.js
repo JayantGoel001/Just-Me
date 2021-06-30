@@ -17,6 +17,8 @@ const getBlogPost = (req,res)=>{
     let randomNumber = Math.floor(Math.random() * (postData.length - numberOfRecentPost));
     res.render('post', { title : post.title , post : post, tags:uniqueTags, categories : uniqueCategories, recentPost : postData.slice(randomNumber,randomNumber+numberOfRecentPost), archives : archives });
 }
+
+
 const get404 = (req,res)=>{
     let randomNumber = Math.floor(Math.random() * (postData.length - numberOfRecentPost));
     res.render('404', { title : "4O4 - I couldn't find that page...", tags:uniqueTags,categories : uniqueCategories, recentPost : postData.slice(randomNumber,randomNumber+numberOfRecentPost),archives : archives });

@@ -23,13 +23,15 @@
         <h3 class="sidebar-heading">Recent Articles</h3>
         <% for (let i = 0; i < recentPost.length; i++) { %>
             <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url('/images/<%= recentPost[i].image%>');"></a>
+                <a href="/posts/<%= recentPost[i].id %>" class="blog-img mr-4" style="background-image: url('/images/<%= recentPost[i].image%>');"></a>
                 <div class="text">
-                    <h3 class="heading"><a href="#"><%= recentPost[i].title %></a></h3>
+                    <h3 class="heading">
+                        <a href="/posts/<%= recentPost[i].id %>"><%= recentPost[i].title %></a>
+                    </h3>
                     <div class="meta">
-                        <div><a href="#"><span class="icon-calendar"></span><%= recentPost[i].date %></a></div>
-                        <div><a href="#"><span class="icon-person"></span><%= recentPost[i].name %></a></div>
-                        <div><a href="#"><span class="icon-chat"></span> <%= recentPost[i].numberOfComments %></a></div>
+                        <div><a href="/posts/<%= recentPost[i].id %>"><span class="icon-calendar"></span><%= recentPost[i].date %></a></div>
+                        <div><a href="/posts/<%= recentPost[i].id %>"><span class="icon-person"></span><%= recentPost[i].name %></a></div>
+                        <div><a href="/posts/<%= recentPost[i].id %>"><span class="icon-chat"></span> <%= recentPost[i].numberOfComments %></a></div>
                     </div>
                 </div>
             </div>
