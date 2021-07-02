@@ -2,8 +2,10 @@
   "name": "just-me",
   "version": "0.0.0",
   "private": true,
+  "homepage": "https://jayantgoel001.github.io/Just-Me/",
   "scripts": {
-    "start": "node ./bin/www",
+    "build": "echo 'Success'",
+    "start": "nodemon",
     "predeploy": "npm run build",
     "deploy" : "gh-pages -d bin"
   },
