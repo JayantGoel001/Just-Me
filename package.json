@@ -4,9 +4,10 @@
   "private": true,
   "homepage": "https://jayantgoel001.github.io/Just-Me",
   "scripts": {
+    "build" : "echo 'Successfully Build The Application'",
     "start": "node ./bin/www",
-    "predeploy" : "npm run build",
-    "deploy" : "master -d build"
+    "predeploy": "npm run build",
+    "deploy": "master -d build"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
