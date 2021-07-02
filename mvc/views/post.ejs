@@ -1,0 +1,108 @@
+<%- include('partials/header.ejs'); %>
+<%
+function nestedComments(postComments) {
+    if (postComments.length==0){
+        return;
+    }
+%>
+    <ul class="children">
+        <% for (let j = 0; j < postComments.length; j++) { %>
+            <li class="comment">
+                <div class="vcard bio">
+                    <img src="<%= postComments[j].userImg %>" alt="Image placeholder">
+                </div>
+                <div class="comment-body">
+                    <h3><%= postComments[j].user %></h3>
+                    <div class="meta"><%= postComments[j].date %></div>
+                    <p><%= postComments[j].body %></p>
+                    <p><a href="#" class="reply">Reply</a></p>
+                </div>
+                <% nestedComments(postComments[j].comments); %>
+            </li>
+        <% } %>
+    </ul>
+<% } %>
+
+<div id="colorlib-main">
+    <section class="ftco-section ftco-no-pt ftco-no-pb">
+        <div class="container px-0">
+            <div class="row d-flex no-gutters">
+                <div class="col-lg-8 px-md-5 py-5">
+                    <div class="row">
+                        <h1 class="mb-3"><%= post.title %></h1>
+
+                        <% for (let i = 0; i < post.body.length; i++) { %>
+                            <%- post.body[i] %>
+                        <% } %>
+
+                        <div class="w-100 tag-widget post-tag-container mb-5 mt-5">
+                            <div class="tagcloud">
+                                <% for (let i = 0; i < post.tags.length; i++) { %>
+                                    <a href="/filter?tag=<%= post.tags[i] %>" class="tag-cloud-link"><%- post.tags[i] %> </a>
+                                <% } %>
+                            </div>
+                        </div>
+                        
+                        <div class="about-author d-flex p-4 bg-light">
+                            <div class="bio mr-5">
+                                <img src="<%= post.img %>" alt="Image placeholder" class="img-fluid mb-4">
+                            </div>
+                            <div class="desc">
+                                <h3><%= post.name %></h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
+                            </div>
+                        </div>
+                        <div class="pt-5 mt-5">
+                            <h3 class="mb-5 font-weight-bold"><%= post.numberOfComments %> Comments</h3>
+                            <ul class="comment-list">
+                                <% for (let i = 0; i < post.comments.length; i++) { %>
+                                    <li class="comment">
+                                        <div class="vcard bio">
+                                            <img src="<%= post.comments[i].userImg %>" alt="Image placeholder">
+                                        </div>
+                                        <div class="comment-body">
+                                            <h3><%= post.comments[i].user %></h3>
+                                            <div class="meta"><%= post.comments[i].date %></div>
+                                            <p><%= post.comments[i].body %></p>
+                                            <p><a href="#" class="reply">Reply</a></p>
+                                        </div>
+                                        <% nestedComments(post.comments[i].comments); %>
+                                    </li>
+                                <% } %>
+                            </ul>
+
+                            <div class="comment-form-wrap pt-5">
+                                <h3 class="mb-5">Leave a comment</h3>
+                                <form action="#" class="p-3 p-md-4 bg-light">
+                                    <div class="form-group">
+                                        <label for="name">Name *</label>
+                                        <input type="text" class="form-control" id="name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email *</label>
+                                        <input type="email" class="form-control" id="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="website">Website</label>
+                                        <input type="url" class="form-control" id="website">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="message">Message</label>
+                                        <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%- include('partials/sidebar_right.ejs'); %>
+            </div>
+        </div>
+    </section>
+</div>
+<%- include('partials/footer.ejs'); %>
