@@ -1,0 +1,29 @@
+<%- include('partials/header.ejs'); %>
+
+<div id="colorlib-main">
+    <section class="ftco-section ftco-no-pt ftco-no-pb bg-light">
+        <div class="container px-0">
+            <div class="row no-gutters">
+                <%
+                    posts = posts.slice(0,posts.length-posts.length%3);
+                    const rowPattern = [
+                        ["vp","hp","hpr"],
+                        ["vp","vp","vp"],
+                        ["hp","hpr","vp"],
+                        ["vp","vpr","vp"]
+                    ];
+
+                    let amountOfRows = posts.length/3;
+                    for (var i = 0; i < amountOfRows; i++) {
+                    %>
+                        <%- include("index_page_post/row.ejs",{ posts : posts.splice(0,3), post_meta : rowPattern[i % rowPattern.length] }); %>
+                    <%
+                    }
+                %>
+
+            </div>
+        </div>
+    </section>
+</div>
+
+<%- include('partials/footer.ejs'); %>
