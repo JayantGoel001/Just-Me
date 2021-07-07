@@ -4,10 +4,7 @@
   "private": true,
   "homepage": "https://jayantgoel001.github.io/Just-Me/",
   "scripts": {
-    "build": "echo 'Success'",
-    "start": "node ./bin/www",
-    "predeploy": "npm run build",
-    "deploy" : "gh-pages -d bin"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
