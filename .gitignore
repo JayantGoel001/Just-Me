@@ -1,2 +1,4 @@
 .idea/
 ionize/
+node_modules/
+.env
