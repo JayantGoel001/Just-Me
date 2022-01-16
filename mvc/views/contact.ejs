@@ -1,0 +1,78 @@
+<%- include('partials/header.ejs'); %>
+<div id="colorlib-main">
+    <section class="ftco-section ftco-no-pt ftco-no-pb">
+        <div class="container px-0">
+            <div class="row no-gutters block-9 m-5">
+                <div class="col-lg-6 order-md-last">
+                    <form action="#" class="bg-primary p-5 contact-form">
+                        <div class="form-group">
+                            <label>
+                                <input type="text" class="form-control" placeholder="Your Name">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="text" class="form-control" placeholder="Your Email">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="text" class="form-control" placeholder="Subject">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for=""></label><textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Send Message" class="btn btn-white py-3 px-5">
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="col-lg-6 d-flex">
+                    <div id="map" class="bg-light"></div>
+                </div>
+            </div>
+
+            <div class="row d-flex mb-5 px-4 px-md-4 contact-info mt-5">
+                <div class="col-md-12 mb-4">
+                    <h2 class="h3">Contact Information</h2>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-lg-6 col-xl-3 mb-4">
+                    <div class="info">
+                        <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-3 mb-4">
+                    <div class="info">
+                        <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-3 mb-4">
+                    <div class="info">
+                        <p><span>Email:</span> <a href="mailto:jgoel92@gmail.com">jgoel92@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-3 mb-4">
+                    <div class="info">
+                        <p><span>Website</span> <a href="https://JayantGoel001.github.io/">JayantGoel001.github.io</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script>
+    function initMap() {
+        let map = new google.maps.Map(document.getElementById('map'),{
+            center : {
+                lat : 40.730610, lng : -73.935242
+            },
+            zoom: 5
+        });
+    }
+</script>
+<script src=`https://maps.googleapis.com/maps/api/js?key=${process.env.API_KEY}&callback=initMap` async defer type="text/javascript"></script>
+<%- include('partials/footer.ejs'); %>
