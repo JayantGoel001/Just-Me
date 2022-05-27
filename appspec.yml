@@ -16,3 +16,4 @@ hooks:
     - location: scripts/application_start.sh
       timeout: 300
       runas: ec2-user
+file_exists_behavior: OVERWRITE
